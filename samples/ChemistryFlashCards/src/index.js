@@ -478,7 +478,9 @@ function handleFinishSessionRequest(intent, session, callback) {
 function isAnswerSlotValid(intent) {
     var answerSlotFilled = intent.slots && intent.slots.Answer && intent.slots.Answer.value;
     var answerSlotIsInt = answerSlotFilled && !isNaN(parseInt(intent.slots.Answer.value));
-    return 1;
+    return answerSlotFilled;
+    // or if you need an integer
+    //retrun answerSlotIsInt;
 }
 
 // ------- Helper functions to build responses -------
